@@ -1,6 +1,6 @@
 "use client";
 
-import {useRef, useState} from "react";
+import {useRef} from "react";
 import {useIsIntersecting} from "@/app/util/useObserver";
 import Image from "next/image";
 import Container from "@/app/global-components/Container/Container";
@@ -63,14 +63,12 @@ const observerOptions = {
 };
 
 export default function PhotoGallery() {
-	const [openGallery, setOpenGallery] = useState(false);
-	const [galleryIndex, setGalleryIndex] = useState(0);
+
 	const sectionRef = useRef(null);
 	const isIntersecting = useIsIntersecting(observerOptions, sectionRef);
 
-	const clickHandler = (index) => {
-		setOpenGallery(true);
-		setGalleryIndex(index);
+	const clickHandler = () => {
+
 	};
 
 	return (

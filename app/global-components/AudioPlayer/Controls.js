@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { HeartOutline, PreviousSong, NextSong, Play, Pause } from "@/app/svg-icons/svg-icons";
-export default function Controls({ audioRef, progressBarRef, duration, setTimeProgress, tracks, trackIndex, setTrackIndex, setCurrentTrack, handleNext }) {
+import { HeartOutline, PreviousSong, NextSong, Play, Pause, Github } from "@/app/svg-icons/svg-icons";
+export default function Controls({ audioRef, progressBarRef, setTimeProgress, tracks, trackIndex, setTrackIndex, setCurrentTrack, handleNext }) {
 	const [isPlaying, setIsPlaying] = useState(false);
-	const playAnimationRef = useRef();
+	const playAnimationRef = useRef(null);
+
 
 	const togglePlayPause = () => {
 		setIsPlaying((prev) => !prev);
@@ -14,11 +15,11 @@ export default function Controls({ audioRef, progressBarRef, duration, setTimePr
 		progressBarRef.current.value = currentTime;
 
 		playAnimationRef.current = requestAnimationFrame(repeat);
-	}, [audioRef, duration, progressBarRef, setTimeProgress]);
+	}, [audioRef, progressBarRef, setTimeProgress]);
 
 	const handlePrevious = () => {
 		if (trackIndex === 0) {
-			let lastTrackIndex = tracks.length - 1;
+			const lastTrackIndex = tracks.length - 1;
 			setTrackIndex(lastTrackIndex);
 			setCurrentTrack(tracks[lastTrackIndex]);
 		} else {
