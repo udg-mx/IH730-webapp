@@ -9,12 +9,13 @@ export default function Home() {
 	return (
 		<>
 			<main className="min-h-screen bg-white">
-				<Intro />
-				<About />
-				<Listen />
-				<Shows />
-				<ContactUs />
-				<PhotoGallery />
+				<h1 className="sr-only">Welcome to the jungle</h1>
+				<Intro/>
+				<About/>
+				<Listen/>
+				<Shows/>
+				<ContactUs/>
+				<PhotoGallery/>
 			</main>
 		</>
 	);

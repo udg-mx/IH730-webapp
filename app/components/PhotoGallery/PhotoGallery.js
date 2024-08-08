@@ -1,12 +1,10 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { useIsIntersecting } from "@/app/util/useObserver";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
+import {useRef, useState} from "react";
+import {useIsIntersecting} from "@/app/util/useObserver";
 import Image from "next/image";
 import Container from "@/app/global-components/Container/Container";
-import { MapMapper, Calendar } from "@/app/svg-icons/svg-icons";
+import {Calendar, MapMapper} from "@/app/svg-icons/svg-icons";
 
 const galleryThumbnails = [
 	{
@@ -99,7 +97,6 @@ export default function PhotoGallery() {
 							</div>
 						);
 					})}
-					<Lightbox open={openGallery} close={() => setOpenGallery(false)} slides={galleryThumbnails[galleryIndex].slides} />
 				</div>
 			</Container>
 		</section>
